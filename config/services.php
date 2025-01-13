@@ -35,4 +35,8 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'tiktok' => [
+        'access_token' => env('TIKTOK_ACCESS_TOKEN'),
+    ],
+
 ];

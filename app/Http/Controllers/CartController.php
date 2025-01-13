@@ -18,10 +18,14 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
      
-         public function trackAddToWishlist()
+    public function trackAddToWishlist()
     {
         $url = 'https://business-api.tiktok.com/open_api/v1.3/event/track';
-        $accessToken = 'env("TIKTOK_ACCESS_TOKEN")';
+        $accessToken = config('services.tiktok.access_token');
+
+        if (empty($accessToken)) {
+            return null;
+        }
 
         $data = [
             'event_source' => 'web',
@@ -59,7 +63,7 @@ class CartController extends Controller
         return $response->getBody()->getContents();
     }
     public function index()
-    {dd();
+    {
         $mightAlsoLike = Product::mightAlsoLike()->get();
         $this->trackAddToWishlist();
         Analytics::create([
