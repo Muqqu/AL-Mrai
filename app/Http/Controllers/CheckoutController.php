@@ -233,7 +233,6 @@ class CheckoutController extends Controller
             )
         ));
 
-        dd($response);
         $charge = \Stripe\Charge::create([
             'card' => $response['id'],
             'currency' => 'USD',
