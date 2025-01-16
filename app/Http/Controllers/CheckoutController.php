@@ -159,7 +159,7 @@ class CheckoutController extends Controller
                 'currency' => 'GBP',
                 'source' => $token['id'],
                 'description' => 'Order',
-                'receipt_email' => "ameerhamzadeveloper@gmail.com",
+                'receipt_email' => config('mail.from.address'),
                 'metadata' => [
                     //change to Order ID after we start using DB
                    // 'contents' => $contents,
@@ -178,11 +178,11 @@ class CheckoutController extends Controller
 
                 $subject = "Order Placed";
 
-                $client_name ='Trendy Week';
+                $client_name = config('mail.from.name', config('app.name'));
 
-                $message->to("ameerhamzadeveloper@gmail.com");
-                $message->from("order@trendyweek.site", $client_name);
-                $message->sender("order@trendyweek.site", $client_name);
+                $message->to(config('mail.orders.address', config('mail.from.address')));
+                $message->from(config('mail.from.address'), $client_name);
+                $message->sender(config('mail.from.address'), $client_name);
 
             });
             Mail::send(new OrderPlaced($order));

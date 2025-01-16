@@ -123,4 +123,8 @@ return [
         ],
     ],
 
+    'orders' => [
+        'address' => env('ORDER_NOTIFICATION_EMAIL', env('MAIL_FROM_ADDRESS')),
+    ],
+
 ];
