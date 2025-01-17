@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="mb-0">©2023. Trendy Week. All Rights Reserved.</p>
+            <p class="mb-0">&copy; {{ date('Y') }}. Trendy Week. All Rights Reserved.</p>
             <div class="d-flex align-items-center gap-2">
                 <img src="{{asset('assets/img/webp/paypal-small.webp')}}" alt="">
                 <img src="{{asset('assets/img/webp/visa.webp')}}" alt="">

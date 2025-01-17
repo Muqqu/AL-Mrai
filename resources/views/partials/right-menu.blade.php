@@ -41,7 +41,7 @@
                     <img src="assets/images/payment_info.png" alt="Trendy">
                 </div>
                 <div class="hm-copyright">
-                    <p>© 2023 Trendy Week All rights reserved</p>
+                    <p>&copy; {{ date('Y') }} Trendy Week All rights reserved</p>
                 </div>
             </div>
         </div>

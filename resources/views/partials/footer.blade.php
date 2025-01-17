@@ -71,7 +71,7 @@
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <div class="content text-center">
-                    <p>© 2023 Trendy Week Store All rights reserved</p>
+                    <p>&copy; {{ date('Y') }} Trendy Week Store All rights reserved</p>
                 </div>
             </div>
         </div>
