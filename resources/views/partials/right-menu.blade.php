@@ -56,7 +56,7 @@
         <li><a href="{{ route('shop.index') }}">Shop</a></li>
         <li><a href="{{ route('about') }}">About</a>
         </li>
-        <li><a href="{{ route('order.track') }}">Track Order</a>
+        <li><a href="{{ route('ordertrack.show') }}">Track Order</a>
         </li>
         <li class="has-dropdown-menu"><a href="#">SUPPORT</a>
             <ul class="sub-menu-two">

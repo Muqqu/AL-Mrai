@@ -36,7 +36,7 @@
                         <ul class="quick-link">
                             <li><a href="{{ route('about') }}"><span>About</span></a></li>
                             <li><a href="{{ route('shop.index') }}"><span>Shop</span></a></li>
-                            <li><a href="{{ route('about') }}"><span>Track Order</span></a></li>
+                            <li><a href="{{ route('ordertrack.show') }}"><span>Track Order</span></a></li>
                             <li><a href="{{ route('policy') }}"><span>Privacy Policy</span></a></li>
                             <li><a href="{{ route('refund_policy') }}"><span>Refund Policy</span></a></li>
                             <li><a href="{{ route('terms') }}"><span>Terms And Conditions</span></a></li>

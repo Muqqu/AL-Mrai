@@ -22,7 +22,7 @@
                                 <li><a href="{{ route('about') }}">About</a>
 
                                 </li>
-                                <li><a href="{{ route('order.track') }}">Track Order</a>
+                                <li><a href="{{ route('ordertrack.show') }}">Track Order</a>
 
                                 </li>
                                 <li><a href="#">Support</a>
