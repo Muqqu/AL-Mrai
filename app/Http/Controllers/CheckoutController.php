@@ -347,7 +347,7 @@ class CheckoutController extends Controller
                     OrderProduct::create([
                         'order_id' => $order->id,
                         'product_id' => $item['product_id'],
-                        'quantity' => $item['product_id'],
+                        'quantity' => $item['quantity'],
                     ]);
                 }
             }else{
@@ -381,17 +381,19 @@ class CheckoutController extends Controller
 
 
         protected function addToOrdersTablesPaypal($email, $name, $error) {
+            $orderNo = $this->generateRandomString(7);
+
             // Insert into orders table
             $order = Order::create([
                 'user_id' => auth()->user() ? auth()->user()->id : null,
-                'tracking_no' => $tracking_no,
+                'tracking_no' => $orderNo,
                 'billing_email' => $email,
                 'billing_name' => $name,
                 'billing_discount' => getNumbers()->get('discount'),
                 'billing_discount_code' => getNumbers()->get('code'),
                 'billing_subtotal' => getNumbers()->get('newSubtotal'),
                 'billing_tax' => getNumbers()->get('newTax'),
-                'billing_total' => $request->amount,
+                'billing_total' => getNumbers()->get('newTotal'),
                 'error' => $error,
                 'payment_gateway' => 'paypal',
             ]);
