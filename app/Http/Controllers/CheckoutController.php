@@ -259,7 +259,7 @@ class CheckoutController extends Controller
     {
         // Check race condition when there are less items available to purchase
         if ($this->productsAreNoLongerAvailable()) {
-            return back()->withErrors('Sorry! One of the items in your cart is no longer avialble.');
+            return back()->withErrors('Sorry! One of the items in your cart is no longer available.');
         }
 
         $gateway = new \Braintree\Gateway([

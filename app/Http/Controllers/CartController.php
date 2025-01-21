@@ -155,7 +155,7 @@ class CartController extends Controller
         }
 
         if ($request->quantity > $request->productQuantity) {
-            session()->flash('errors', collect(['We currently do not have enouogh items in stock.']));
+            session()->flash('errors', collect(['We currently do not have enough items in stock.']));
             return response()->json(['success' => false], 400); //400 is an error code
         }
 
