@@ -61,9 +61,6 @@ class ShopController extends Controller
         $client = new Client();
         // $response = $client->get('https://api.ipregistry.co/?key=tryout');
 
-        // // Decode the JSON response
-        // $data = json_decode($response->getBody(), true);
-        //dd($data);
         Analytics::create([
             'event' => 'product.show',
             'slug' => $slug,
