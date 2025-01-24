@@ -48,18 +48,14 @@ class StripeController extends Controller
             ]);
  
             if($charge['status'] == 'succeeded') {
-                echo 'test success';
-                exit;
                 return redirect('stripe')->with('success', 'Payment Success!');
  
             } else {
-                echo 'something went wrong';
-                exit;
                 return redirect('stripe')->with('error', 'something went to wrong.');
             }
  
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             return $e->getMessage();
         }
  
